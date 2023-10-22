@@ -15,32 +15,38 @@ let tasks = [
 export default function DragTasks() {
   const [undoneTasks, setUndoneTasks] = useState<Task[]>(tasks);
   const [doneTasks, setDoneTasks] = useState<Task[]>([]);
+  const [chkTasks, setChkTasks] = useState<Task[]>([]);
   let checkedTask: Task;
 
   const getCheckedItem = (_id: number, _case: string) => {
-    switch (_case) {
-      case "u2d":
-        checkedTask = undoneTasks.filter((t) => t.id === _id)[0];
-        break;
-      case "d2u":
-        checkedTask = doneTasks.filter((t) => t.id === _id)[0];
-        break;
+    if (_case === "u2d") {
+      let checkedTasks = undoneTasks.filter((t) => t.id === _id);
+      setChkTasks((tsks) => [...tsks, ...checkedTasks]);
+    } else {
+      let checkedTasks = doneTasks.filter((t) => t.id === _id);
+      setChkTasks((tsks) => [...tsks, ...checkedTasks]);
     }
   };
 
   const moveUndoneToDone = () => {
-    let newUndoneTasks = undoneTasks.filter((t) => t.id !== checkedTask.id);
+    let newUndoneTasks: Task[] = undoneTasks.filter(
+      (t) => !chkTasks.find((chktsk) => t.id === chktsk.id)
+    );
     setUndoneTasks(newUndoneTasks);
     let newDoneTasks = [...doneTasks];
-    newDoneTasks.push(checkedTask);
+    newDoneTasks = [...newDoneTasks, ...chkTasks];
+    setChkTasks([]);
     setDoneTasks(newDoneTasks);
     checkedTask = { id: 0, text: "" };
   };
   const moveDoneToDone = () => {
-    let newDoneTasks = doneTasks.filter((t) => t.id !== checkedTask.id);
+    let newDoneTasks = doneTasks.filter(
+      (t) => !chkTasks.find((chktsk) => t.id === chktsk.id)
+    );
     setDoneTasks(newDoneTasks);
     let newUndoneTasks = [...undoneTasks];
-    newUndoneTasks.push(checkedTask);
+    newUndoneTasks = [...newUndoneTasks, ...chkTasks];
+    setChkTasks([]);
     setUndoneTasks(newUndoneTasks);
     checkedTask = { id: 0, text: "" };
   };
