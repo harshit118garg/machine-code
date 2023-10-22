@@ -2,53 +2,47 @@ import { useState } from "react";
 import "./styles/index.scss";
 import { Task } from "./types/tasks-types";
 import { MoveLeft, MoveRight } from "lucide-react";
-
-let tasks = [
-  { id: 1, text: "task A" },
-  { id: 2, text: "task B" },
-  { id: 3, text: "task C" },
-  { id: 4, text: "task D" },
-  { id: 5, text: "task E" },
-  { id: 6, text: "task F" },
-];
+import { TASKS } from "./types/tasks-constants";
 
 export default function DragTasks() {
-  const [undoneTasks, setUndoneTasks] = useState<Task[]>(tasks);
+  const [undoneTasks, setUndoneTasks] = useState<Task[]>(TASKS);
   const [doneTasks, setDoneTasks] = useState<Task[]>([]);
   const [chkTasks, setChkTasks] = useState<Task[]>([]);
-  let checkedTask: Task;
 
-  const getCheckedItem = (_id: number, _case: string) => {
+  const getCheckedItem = (_task: Task, _case: string) => {
     if (_case === "u2d") {
-      let checkedTasks = undoneTasks.filter((t) => t.id === _id);
+      let checkedTasks = undoneTasks.filter((t) => t.id === _task.id);
       setChkTasks((tsks) => [...tsks, ...checkedTasks]);
     } else {
-      let checkedTasks = doneTasks.filter((t) => t.id === _id);
+      let checkedTasks = doneTasks.filter((t) => t.id === _task.id);
       setChkTasks((tsks) => [...tsks, ...checkedTasks]);
     }
   };
 
-  const moveUndoneToDone = () => {
-    let newUndoneTasks: Task[] = undoneTasks.filter(
-      (t) => !chkTasks.find((chktsk) => t.id === chktsk.id)
-    );
-    setUndoneTasks(newUndoneTasks);
-    let newDoneTasks = [...doneTasks];
-    newDoneTasks = [...newDoneTasks, ...chkTasks];
-    setChkTasks([]);
-    setDoneTasks(newDoneTasks);
-    checkedTask = { id: 0, text: "" };
+  const moveSelectedToDone = () => {
+    chkTasks.forEach((t: Task) => {
+      if (!doneTasks.includes(t)) {
+        moveToDone(t);
+      }
+    });
   };
-  const moveDoneToDone = () => {
-    let newDoneTasks = doneTasks.filter(
-      (t) => !chkTasks.find((chktsk) => t.id === chktsk.id)
-    );
-    setDoneTasks(newDoneTasks);
-    let newUndoneTasks = [...undoneTasks];
-    newUndoneTasks = [...newUndoneTasks, ...chkTasks];
-    setChkTasks([]);
-    setUndoneTasks(newUndoneTasks);
-    checkedTask = { id: 0, text: "" };
+  const moveSelectedToUnDone = () => {
+    chkTasks.forEach((t: Task) => {
+      if (!undoneTasks.includes(t)) {
+        moveToUnDone(t);
+      }
+    });
+  };
+
+  const moveToDone = (t: Task) => {
+    setUndoneTasks((prevTasks) => prevTasks.filter((task) => task.id !== t.id));
+    setDoneTasks((prevTasks) => [...prevTasks, t]);
+    setChkTasks((prevTasks) => prevTasks.filter((task) => task.id !== t.id));
+  };
+  const moveToUnDone = (t: Task) => {
+    setDoneTasks((prevTasks) => prevTasks.filter((task) => task.id !== t.id));
+    setUndoneTasks((prevTasks) => [...prevTasks, t]);
+    setChkTasks((prevTasks) => prevTasks.filter((task) => task.id !== t.id));
   };
 
   return (
@@ -66,7 +60,7 @@ export default function DragTasks() {
                       type="checkbox"
                       name={t.text}
                       value={t.text}
-                      onChange={() => getCheckedItem(t.id, "u2d")}
+                      onChange={() => getCheckedItem(t, "u2d")}
                     />
                     <label htmlFor="">{t.text}</label>
                   </div>
@@ -77,10 +71,18 @@ export default function DragTasks() {
         <div className="box">
           <div className="tasks">
             <div className="swap-buttons">
-              <button className="move-btn right" onClick={moveUndoneToDone}>
+              <button
+                className="move-btn right"
+                disabled={undoneTasks.length < 1}
+                onClick={moveSelectedToDone}
+              >
                 <MoveRight />
               </button>
-              <button onClick={moveDoneToDone} className="move-btn left">
+              <button
+                onClick={moveSelectedToUnDone}
+                disabled={doneTasks.length < 1}
+                className="move-btn left"
+              >
                 <MoveLeft />
               </button>
             </div>
@@ -98,7 +100,7 @@ export default function DragTasks() {
                       type="checkbox"
                       name={t?.text}
                       value={t?.text}
-                      onChange={() => getCheckedItem(t.id, "d2u")}
+                      onChange={() => getCheckedItem(t, "d2u")}
                     />
                     <label htmlFor="">{t?.text}</label>
                   </div>
