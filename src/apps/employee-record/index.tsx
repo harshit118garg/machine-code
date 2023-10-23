@@ -25,9 +25,10 @@ export default function EmployRecords() {
       newEmployee.phone
     ) {
       let newEmployeeWithId = { ...newEmployee, id: crypto.randomUUID() };
-      let existingEmployees = [...employeesInfo];
-      existingEmployees.push(newEmployeeWithId);
-      setEmployeesInfo(existingEmployees);
+      setEmployeesInfo((prevEmployees) => [
+        ...prevEmployees,
+        newEmployeeWithId,
+      ]);
       setNewEmployee(emptyObj);
       setOpenModal(false);
     }

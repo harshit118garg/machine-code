@@ -20,6 +20,11 @@ export default function Header() {
             <span>Image Carousel</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/dataFetchingPage"}>
+            <span>Data Fetching App + Pagingation</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );
