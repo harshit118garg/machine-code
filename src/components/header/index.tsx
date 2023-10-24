@@ -25,6 +25,11 @@ export default function Header() {
             <span>Data Fetching App + Pagingation</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/timeline"}>
+            <span>TimeLine</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

@@ -1,0 +1,49 @@
+.linear-btns {
+  padding: 0 4rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .btn-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 62px;
+
+    button {
+      all: unset;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .active {
+      > * {
+        stroke: #232324;
+        fill: #f99d9d;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 0.1;
+      text-wrap: nowrap;
+    }
+
+    // &:not(:last-child) {
+    //   button {
+    //     &::after {
+    //       content: "";
+    //       position: absolute;
+    //       left: 22px;
+    //       top: 9px;
+    //       right: -105px;
+    //       height: 5px;
+    //       background-color: green;
+    //     }
+    //   }
+    // }
+  }
+}

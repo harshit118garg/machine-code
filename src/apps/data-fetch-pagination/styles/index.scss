@@ -53,6 +53,16 @@
         justify-content: center;
         gap: 1.5rem;
 
+        button {
+          font-size: 2rem;
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+
+          &:hover {
+            transform: scaleX(1.6);
+          }
+        }
+
         .btn-active {
           background-color: #000;
           color: #fff;
@@ -61,15 +71,5 @@
         }
       }
     }
-  }
-}
-
-button {
-  font-size: 2rem;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-
-  &:hover {
-    transform: scaleX(1.6);
   }
 }
