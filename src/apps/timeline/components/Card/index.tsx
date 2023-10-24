@@ -9,7 +9,7 @@ interface CardProperties {
 export default function Card({ cardData, id }: CardProperties) {
   const { from, title, year, percentage } = cardData;
 
-  const translateValue = `translateX(${-100 * id}%)`;
+  const translateValue = `translateY(${-100 * id}%)`;
 
   return (
     <div className="card" style={{ transform: translateValue }}>
