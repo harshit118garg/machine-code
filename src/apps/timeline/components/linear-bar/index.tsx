@@ -22,13 +22,17 @@ export default function LinearBar({ data, handleClick }: LinearbarProperties) {
         {data.map((d) => {
           return (
             <div key={d.id} className="btn-wrapper">
-              <button
-                onClick={() => clickHandler(d.id)}
-                className={`${selectedBtnId === d.id ? "active" : ""}`}
-              >
-                <CircleDot />
-              </button>
-              <p>{d.year}</p>
+              <div className="line"></div>
+              <div className="btn-box">
+                <button
+                  onClick={() => clickHandler(d.id)}
+                  className={`${selectedBtnId === d.id ? "active" : ""}`}
+                >
+                  <CircleDot />
+                </button>
+                <p>{d.year}</p>
+              </div>
+              <div className="line"></div>
             </div>
           );
         })}
