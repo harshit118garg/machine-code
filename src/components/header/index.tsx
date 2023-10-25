@@ -30,6 +30,11 @@ export default function Header() {
             <span>TimeLine</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/progressbar"}>
+            <span>Progress Bar</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

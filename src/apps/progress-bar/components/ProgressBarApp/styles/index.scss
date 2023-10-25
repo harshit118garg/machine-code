@@ -1,0 +1,38 @@
+.wrapper {
+  min-height: 10rem;
+  background-color: #3a3838;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .progress-bar {
+    height: 3rem;
+    width: 80%;
+    margin: 0 5rem;
+    border-radius: 50px;
+    background: #c0c0bb;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    .bar {
+      transition: width 200ms ease-in-out;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(229, 235, 64, 0.8951913529083508) 14%,
+        rgba(2, 255, 0, 0.8755835097710959) 100%
+      );
+
+      span {
+        font-size: 1.5rem;
+        font-weight: 500;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
