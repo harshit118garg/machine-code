@@ -35,6 +35,21 @@ export default function Header() {
             <span>Progress Bar</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/searchresults"}>
+            <span>Search Results</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/multiStepForm"}>
+            <span>Multi Step Form</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/showmore"}>
+            <span>Show More Api Content</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

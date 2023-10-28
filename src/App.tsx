@@ -10,6 +10,7 @@ const ImgCarousel = lazy(() => import("./apps/img-carousel"));
 const DFP = lazy(() => import("./apps/data-fetch-pagination"));
 const Timeline = lazy(() => import("./apps/timeline"));
 const ProgressBarApp = lazy(() => import("./apps/progress-bar"));
+const SearchResultsApp = lazy(() => import("./apps/search-results"));
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path={"dataFetchingPage"} element={<DFP />} />
           <Route path={"timeline"} element={<Timeline />} />
           <Route path={"progressbar"} element={<ProgressBarApp />} />
+          <Route path={"searchresults"} element={<SearchResultsApp />} />
         </Routes>
       </Suspense>
     </>
