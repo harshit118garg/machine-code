@@ -11,6 +11,7 @@ const DFP = lazy(() => import("./apps/data-fetch-pagination"));
 const Timeline = lazy(() => import("./apps/timeline"));
 const ProgressBarApp = lazy(() => import("./apps/progress-bar"));
 const SearchResultsApp = lazy(() => import("./apps/search-results"));
+const GridLights = lazy(() => import("./apps/grid-lights"));
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path={"timeline"} element={<Timeline />} />
           <Route path={"progressbar"} element={<ProgressBarApp />} />
           <Route path={"searchresults"} element={<SearchResultsApp />} />
+          <Route path={"gridlights"} element={<GridLights />} />
         </Routes>
       </Suspense>
     </>

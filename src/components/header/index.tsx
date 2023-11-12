@@ -41,13 +41,8 @@ export default function Header() {
           </Link>
         </li>
         <li>
-          <Link to={"/multiStepForm"}>
-            <span>Multi Step Form</span>
-          </Link>
-        </li>
-        <li>
-          <Link to={"/showmore"}>
-            <span>Show More Api Content</span>
+          <Link to={"/gridlights"}>
+            <span>Grid Lights</span>
           </Link>
         </li>
       </ul>
