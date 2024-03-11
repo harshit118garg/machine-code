@@ -1,0 +1,15 @@
+.todoListContainer {
+  padding: 1.5rem;
+  background-color: #6b6bf5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .todoItem {
+    background-color: bisque;
+    font-size: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

@@ -45,6 +45,26 @@ export default function Header() {
             <span>Grid Lights</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/loadmore"}>
+            <span>Load More</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/select"}>
+            <span>React Select</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/card"}>
+            <span>Card Comp</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/todolist"}>
+            <span>TODO List</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

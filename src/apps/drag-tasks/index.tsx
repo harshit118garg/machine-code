@@ -9,12 +9,22 @@ export default function DragTasks() {
   const [doneTasks, setDoneTasks] = useState<Task[]>([]);
   const [chkTasks, setChkTasks] = useState<Task[]>([]);
 
-  const getCheckedItem = (_task: Task, _case: string) => {
+  const getCheckedItem = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    _task: Task,
+    _case: string
+  ) => {
+    console.log("event ", e);
+    console.log("task ", _task);
     if (_case === "u2d") {
-      let checkedTasks = undoneTasks.filter((t) => t.id === _task.id);
+      let checkedTasks = undoneTasks.filter(
+        (t) => t.id === _task.id && e.target.checked
+      );
       setChkTasks((tsks) => [...tsks, ...checkedTasks]);
     } else {
-      let checkedTasks = doneTasks.filter((t) => t.id === _task.id);
+      let checkedTasks = doneTasks.filter(
+        (t) => t.id === _task.id && e.target.checked
+      );
       setChkTasks((tsks) => [...tsks, ...checkedTasks]);
     }
   };
@@ -60,7 +70,9 @@ export default function DragTasks() {
                       type="checkbox"
                       name={t.text}
                       value={t.text}
-                      onChange={() => getCheckedItem(t, "u2d")}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        getCheckedItem(e, t, "u2d")
+                      }
                     />
                     <label htmlFor="">{t.text}</label>
                   </div>
@@ -100,7 +112,9 @@ export default function DragTasks() {
                       type="checkbox"
                       name={t?.text}
                       value={t?.text}
-                      onChange={() => getCheckedItem(t, "d2u")}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        getCheckedItem(e, t, "d2u")
+                      }
                     />
                     <label htmlFor="">{t?.text}</label>
                   </div>
