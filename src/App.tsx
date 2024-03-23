@@ -17,6 +17,7 @@ const LoadMore = lazy(() => import("./apps/load-more"));
 const ReactSelect = lazy(() => import("./apps/react-select"));
 const CardComp = lazy(() => import("./apps/card"));
 const Todolist = lazy(() => import("./apps/todolist"));
+const OTP = lazy(() => import("./apps/OTP"));
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path={"select"} element={<ReactSelect />} />
             <Route path={"card"} element={<CardComp />} />
             <Route path={"todolist"} element={<Todolist />} />
+            <Route path={"otp"} element={<OTP />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

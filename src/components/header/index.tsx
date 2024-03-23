@@ -65,6 +65,11 @@ export default function Header() {
             <span>TODO List</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/otp"}>
+            <span>OTP Input</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );
