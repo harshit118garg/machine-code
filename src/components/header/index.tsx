@@ -70,6 +70,11 @@ export default function Header() {
             <span>OTP Input</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/accordion"}>
+            <span>Accordion</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

@@ -18,6 +18,7 @@ const ReactSelect = lazy(() => import("./apps/react-select"));
 const CardComp = lazy(() => import("./apps/card"));
 const Todolist = lazy(() => import("./apps/todolist"));
 const OTP = lazy(() => import("./apps/OTP"));
+const Accordion = lazy(() => import("./apps/accordionComp"));
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path={"card"} element={<CardComp />} />
             <Route path={"todolist"} element={<Todolist />} />
             <Route path={"otp"} element={<OTP />} />
+            <Route path={"accordion"} element={<Accordion />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>
