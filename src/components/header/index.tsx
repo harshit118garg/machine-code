@@ -75,6 +75,11 @@ export default function Header() {
             <span>Accordion</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/tictactoe"}>
+            <span>TicTacToe</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

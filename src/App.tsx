@@ -19,6 +19,7 @@ const CardComp = lazy(() => import("./apps/card"));
 const Todolist = lazy(() => import("./apps/todolist"));
 const OTP = lazy(() => import("./apps/OTP"));
 const Accordion = lazy(() => import("./apps/accordionComp"));
+const TicTacToe = lazy(() => import("./apps/tic-tac-toe"));
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path={"todolist"} element={<Todolist />} />
             <Route path={"otp"} element={<OTP />} />
             <Route path={"accordion"} element={<Accordion />} />
+            <Route path={"tictactoe"} element={<TicTacToe />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

@@ -23,7 +23,7 @@ interface AccordionPaneProps {
 export default function AccordionComp({
   onePanelView = false,
 }: {
-  onePanelView: boolean;
+  onePanelView?: boolean;
 }) {
   const { accordionData } = data;
   const [expandedPanels, setExpandedPanels] = useState<number[]>([]);
