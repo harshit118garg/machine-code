@@ -80,6 +80,21 @@ export default function Header() {
             <span>TicTacToe</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/memorygame"}>
+            <span>Memory Game</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/InfoGain"}>
+            <span>Info Gain</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={"/testing"}>
+            <span>Testing</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

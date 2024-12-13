@@ -20,6 +20,8 @@ const Todolist = lazy(() => import("./apps/todolist"));
 const OTP = lazy(() => import("./apps/OTP"));
 const Accordion = lazy(() => import("./apps/accordionComp"));
 const TicTacToe = lazy(() => import("./apps/tic-tac-toe"));
+const MemoryGame = lazy(() => import("./apps/memoryGame"));
+const Testing = lazy(() => import("./apps/testing-app"));
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
             <Route path={"otp"} element={<OTP />} />
             <Route path={"accordion"} element={<Accordion />} />
             <Route path={"tictactoe"} element={<TicTacToe />} />
+            <Route path={"memorygame"} element={<MemoryGame />} />
+            <Route path={"testing"} element={<Testing />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

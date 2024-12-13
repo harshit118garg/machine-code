@@ -1,9 +1,13 @@
 import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IMAGES } from "./constants/imgCarouselConstants";
 import "./styles/index.scss";
 
-export default function ImgCarousel() {
+export default function ImgCarousel({
+  autoplay = true,
+}: {
+  autoplay?: boolean;
+}) {
   const [imgIdx, setImgIdx] = useState<number>(0);
 
   const showNext = () => {
@@ -13,6 +17,18 @@ export default function ImgCarousel() {
   const showPrev = () => {
     setImgIdx((imgIdx - 1 + IMAGES.length) % IMAGES.length);
   };
+
+  useEffect(() => {
+    if (!autoplay) return;
+
+    const autoplayInterval = setInterval(() => {
+      showNext();
+    }, 2000);
+
+    return () => {
+      clearInterval(autoplayInterval);
+    };
+  }, [imgIdx, autoplay]);
 
   const translateValue = `translateX(${-100 * imgIdx}%)`;
 
