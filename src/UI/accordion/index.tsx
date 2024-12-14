@@ -3,7 +3,7 @@ import AccordionItem from "./components/AccordionItem";
 
 export default function Accordion() {
   return (
-    <div>
+    <>
       <h2>Accordion</h2>
       <div className="wrapper bg-green-300 p-4 rounded-xl">
         <div className="accordion-items p-2 flex flex-col gap-4">
@@ -16,6 +16,6 @@ export default function Accordion() {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 }
