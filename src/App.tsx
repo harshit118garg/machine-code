@@ -1,24 +1,13 @@
-import { Suspense, lazy } from "react";
-import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/header";
-import Navbar from "./components/navbar";
-import ErrorBoundary from "./components/errorBoundary";
-
-const DragTasks = lazy(() => import("./apps/drag-tasks"));
+import { Accordion, Navbar } from "./UI";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Header />
-      <ErrorBoundary>
-        <Suspense>
-          <Routes>
-            <Route path={"dragtasks"} element={<DragTasks />} />
-          </Routes>
-        </Suspense>
-      </ErrorBoundary>
+      <main className="bg-blue-400">
+        <Accordion />
+      </main>
     </>
   );
 }
