@@ -18,6 +18,7 @@
   "devDependencies": {
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
+    "@types/react-lazy-load-image-component": "^1.6.4",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "@vitejs/plugin-react": "^4.3.4",
@@ -28,6 +29,7 @@
     "lucide-react": "^0.468.0",
     "npm-check-updates": "^17.1.11",
     "postcss": "^8.4.49",
+    "react-lazy-load-image-component": "^1.6.2",
     "react-select": "^5.9.0",
     "sass": "^1.83.0",
     "tailwindcss": "^3.4.16",

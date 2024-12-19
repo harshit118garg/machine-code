@@ -1,12 +1,12 @@
 import "./App.scss";
-import { Accordion, Navbar } from "./UI";
+import { AccordionContainer, Navbar } from "./UI";
 
 function App() {
   return (
     <>
       <Navbar />
-      <main className="bg-blue-400">
-        <Accordion />
+      <main className="bg-blue-800">
+        <AccordionContainer />
       </main>
     </>
   );

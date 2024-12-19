@@ -1,0 +1,16 @@
+{
+  "accordionContent": [
+    {
+      "id": 1,
+      "title": "Text",
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, autemminus laboriosam voluptatibus dolores expedita quos ad quidem impedit inventore rem error delectus veritatis placeat officia magni eveniet quis perferendis ducimus. Similique dignissimos, ipsam quasi provident consequuntur id consectetur unde voluptate numquam aperiam quas rerum incidunt, cupiditate, a suscipit doloribus."
+    },
+    {
+      "id": 2,
+      "title": "Image",
+      "type": "image",
+      "content": "/assets/img1.jpg"
+    }
+  ]
+}

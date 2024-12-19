@@ -1,4 +1,4 @@
-import Accordion from "./accordion";
+import AccordionContainer from "./accordion";
 import Navbar from "./navbar";
 
-export { Accordion, Navbar };
+export { AccordionContainer, Navbar };

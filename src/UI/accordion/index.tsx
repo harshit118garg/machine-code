@@ -1,19 +1,15 @@
-import { Fragment } from "react/jsx-runtime";
-import AccordionItem from "./components/AccordionItem";
+import { accordionContent } from "../../static/dummyContent.json";
+import Accordion from "./components/Accordion";
 
-export default function Accordion() {
+export default function AccordionContainer() {
   return (
     <>
-      <h2>Accordion</h2>
-      <div className="wrapper bg-green-300 p-4 rounded-xl">
+      <h2 className="text-white">Accordion</h2>
+      <div className="wrapper p-4 rounded-xl">
         <div className="accordion-items p-2 flex flex-col gap-4">
-          {[1, 2, 3, 4].map((item) => {
-            return (
-              <Fragment key={item}>
-                <AccordionItem />
-              </Fragment>
-            );
-          })}
+          {accordionContent.map((item) => (
+            <Accordion {...item} key={item.id} />
+          ))}
         </div>
       </div>
     </>
