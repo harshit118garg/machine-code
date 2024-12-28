@@ -11,6 +11,12 @@
       "title": "Image",
       "type": "image",
       "content": "/assets/img1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Image From Web",
+      "type": "image",
+      "content": "https://images.pexels.com/photos/7887723/pexels-photo-7887723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ]
 }
