@@ -31,3 +31,15 @@ export interface TabPanelProps {
   index: number;
   activeTab: number;
 }
+
+export interface CARSInterface {
+  id: number;
+  altText: string;
+  url: string;
+}
+
+export type CAROUSELPROPTYPES = {
+  slides: CARSInterface[];
+  autoplay?: boolean;
+  vertical?: boolean;
+};

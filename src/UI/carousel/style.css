@@ -1,0 +1,36 @@
+.slider {
+  &.verticle-slider {
+    .image-slider {
+      flex-direction: column;
+      overflow-y: hidden;
+    }
+
+    .arrows {
+      flex-direction: column;
+    }
+
+    .dots {
+      flex-direction: column;
+      align-items: flex-end;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 0.5rem;
+    }
+  }
+
+  &.horizontal-slider {
+    .image-slider {
+      flex-direction: row;
+      overflow-x: hidden;
+    }
+
+    .arrows {
+      flex-direction: row;
+    }
+
+    .dots {
+      bottom: 1rem;
+      flex-direction: row;
+    }
+  }
+}
