@@ -13,10 +13,39 @@
       "content": "/assets/img1.jpg"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Image From Web",
       "type": "image",
       "content": "https://images.pexels.com/photos/7887723/pexels-photo-7887723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ],
+  "tabsContent": [
+    {
+      "id": 1,
+      "tabPaneTitle": "Tab 1",
+      "tabPanel": {
+        "type": "text",
+        "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit mollitia, vel obcaecati odio, quo id quaerat blanditiis magnam architecto possimus nemo maxime aliquid nesciunt dignissimos omnis porro maiores, odit sunt perspiciatis facere velit dolor nam reiciendis. Alias hic perspiciatis itaque."
+      }
+    },
+    {
+      "id": 2,
+      "tabPaneTitle": "Tab 2",
+      "tabPanel": {
+        "type": "image",
+        "content": "https://images.pexels.com/photos/7887723/pexels-photo-7887723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      }
+    },
+    {
+      "id": 3,
+      "tabPaneTitle": "Tab 3",
+      "tabPanel": {
+        "type": "headline",
+        "content": {
+          "size": 2,
+          "headlineText": "Dummy Headline content"
+        }
+      }
     }
   ]
 }

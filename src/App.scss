@@ -10,5 +10,12 @@
     padding: 4rem;
     height: 100%;
     font-size: 2rem;
+
+    .image-wrapper {
+      span {
+        height: 100% !important;
+        width: 100% !important;
+      }
+    }
   }
 }

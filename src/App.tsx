@@ -1,5 +1,5 @@
 import "./App.scss";
-import { AccordionContainer, Navbar } from "./UI";
+import { AccordionContainer, Navbar, Tabs, Teaser } from "./UI";
 
 function App() {
   return (
@@ -7,6 +7,8 @@ function App() {
       <Navbar />
       <main className="bg-blue-800">
         <AccordionContainer />
+        <Tabs />
+        {/* <Teaser /> */}
       </main>
     </>
   );

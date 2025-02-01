@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AccordionContent } from "../../../global/definations/types";
-import { Icon, Image } from "../../../shared";
+import { Headline, Icon, Image } from "../../../shared";
 
 export default function Accordion(props: AccordionContent) {
   const { content, title, type } = props;
@@ -16,7 +16,7 @@ export default function Accordion(props: AccordionContent) {
         );
       case "image":
         return (
-          <div className="w-full aspect-w-16 aspect-h-9">
+          <div className="w-full aspect-w-16 aspect-h-9 image-wrapper">
             <Image
               alt={title}
               src={content}
@@ -46,7 +46,7 @@ export default function Accordion(props: AccordionContent) {
         aria-expanded={isOpen}
         aria-controls="accordion-panel"
       >
-        <h3 className="font-medium text-2xl">{title}</h3>
+        <Headline size={3} headlineText={title} />
         <span
           className={`transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
