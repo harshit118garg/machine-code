@@ -11,10 +11,11 @@ const Carousel = ({
   const [activeSlide, setActiveSlide] = useState<number>(0);
 
   const previous = () => {
-    setActiveSlide((activeSlide - 1 + slides.length) % slides.length);
+    setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
+
   const next = () => {
-    setActiveSlide((activeSlide + 1) % slides.length);
+    setActiveSlide((prev) => (prev + 1) % slides.length);
   };
 
   useEffect(() => {
@@ -22,63 +23,57 @@ const Carousel = ({
 
     const timer = setInterval(() => {
       next();
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(timer);
-  }, [activeSlide]);
-
-  const translateValue = vertical
-    ? `translateY(${-100 * activeSlide}%)`
-    : `translateX(${-100 * activeSlide}%)`;
+  }, [activeSlide, autoplay]);
 
   return (
     <Container componentName="Image Slider">
       <div
-        className={`slider relative ${
-          vertical ? "verticle-slider" : "horizontal-slider"
-        }`}
+        className={`slider ${
+          vertical ? "vertical-slider" : "horizontal-slider"
+        } relative overflow-hidden`}
       >
-        <div className={`image-slider flex max-h-[40rem] max-w-full`}>
-          {slides.map((slide) => {
-            return (
-              <img
-                className="object-cover h-full w-full block transition-[transform] ease-in-out duration-300"
-                src={slide.url}
-                key={slide.id}
-                alt={slide.altText}
-                style={{ transform: translateValue }}
-              />
-            );
-          })}
+        <div
+          className="image-slider flex transition-transform ease-in-out duration-500"
+          style={{
+            transform: vertical
+              ? `translateY(${-100 * activeSlide}%)`
+              : `translateX(${-100 * activeSlide}%)`,
+          }}
+        >
+          {slides.map((slide) => (
+            <img
+              key={slide.id}
+              src={slide.url}
+              alt={slide.altText}
+              className="object-cover w-full h-full"
+            />
+          ))}
         </div>
+
+        {/* Navigation Arrows */}
         <div className="arrows absolute inset-0 flex justify-between px-4 items-center h-full">
-          <button
-            className="p-2 rounded hover:bg-slate-100 transition-all ease-in-out duration-200"
-            onClick={previous}
-          >
+          <button className="arrow-btn" onClick={previous}>
             <Icon name={vertical ? "move-up" : "move-left"} />
           </button>
-          <button
-            className="p-2 rounded hover:bg-slate-100 transition-all ease-in-out duration-200"
-            onClick={next}
-          >
+          <button className="arrow-btn" onClick={next}>
             <Icon name={vertical ? "move-down" : "move-right"} />
           </button>
         </div>
-        <div
-          className={`dots w-full absolute flex justify-center items-center`}
-        >
-          {slides.map((_slide, _i) => {
-            return (
-              <button
-                key={_slide.id}
-                className="text-black transition hover:scale-125"
-                onClick={() => setActiveSlide(_i)}
-              >
-                <Icon name={activeSlide === _i ? "circle-dot" : "circle"} />
-              </button>
-            );
-          })}
+
+        {/* Dots */}
+        <div className="dots absolute">
+          {slides.map((_slide, _i) => (
+            <button
+              key={_slide.id}
+              className={`dot ${activeSlide === _i ? "active" : ""}`}
+              onClick={() => setActiveSlide(_i)}
+            >
+              <Icon name={activeSlide === _i ? "circle-dot" : "circle"} />
+            </button>
+          ))}
         </div>
       </div>
     </Container>
