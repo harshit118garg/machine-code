@@ -1,0 +1,51 @@
+body {
+    height: 100%;
+  }
+  
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .timer-app {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: burlywood;
+  }
+  
+  .timer-countdown {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .timer-countdown input {
+    width: 100px;
+    padding: 0.5rem;
+  }
+  
+  .timer-controls {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .timer-controls button {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .timer-controls button:hover {
+    background-color: orchid;
+  }
+  

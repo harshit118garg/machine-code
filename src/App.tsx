@@ -22,6 +22,7 @@ const Accordion = lazy(() => import("./apps/accordionComp"));
 const TicTacToe = lazy(() => import("./apps/tic-tac-toe"));
 const MemoryGame = lazy(() => import("./apps/memoryGame"));
 const Testing = lazy(() => import("./apps/testing-app"));
+const AutoComplete = lazy(() => import("./apps/auto-complete"));
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path={"tictactoe"} element={<TicTacToe />} />
             <Route path={"memorygame"} element={<MemoryGame />} />
             <Route path={"testing"} element={<Testing />} />
+            <Route path={"autocomplete"} element={<AutoComplete />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

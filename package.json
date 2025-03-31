@@ -11,24 +11,25 @@
     "upgrade:deps": "ncu -u && npm install"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.4.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.15.0",
-    "@typescript-eslint/parser": "^8.15.0",
-    "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.15.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "lucide-react": "^0.460.0",
-    "npm-check-updates": "^17.1.11",
-    "react-select": "^5.8.3",
-    "sass": "^1.81.0",
-    "typescript": "^5.7.2",
-    "vite": "^5.4.11"
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "axios": "^1.8.4",
+    "eslint": "^9.23.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "lucide-react": "^0.485.0",
+    "npm-check-updates": "^17.1.16",
+    "react-select": "^5.10.1",
+    "sass": "^1.86.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.3"
   }
 }

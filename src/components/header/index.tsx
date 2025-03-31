@@ -95,6 +95,11 @@ export default function Header() {
             <span>Testing</span>
           </Link>
         </li>
+        <li>
+          <Link to={"/autocomplete"}>
+            <span>Auto-Complete</span>
+          </Link>
+        </li>
       </ul>
     </header>
   );

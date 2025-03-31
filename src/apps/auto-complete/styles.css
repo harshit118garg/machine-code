@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auto-complete-input {
+  position: relative;
+  width: 200px;
+}
+
+.auto-complete-input input {
+  max-width: 90%;
+  padding: 0.5em;
+}
+
+.auto-complete-input span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.suggestion-box {
+  padding: 0.5em;
+  max-height: 300px;
+  border: 1px solid black;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.country-name {
+  padding: 0.25em;
+  cursor: pointer;
+}
+
+.country-name:hover {
+  background-color: burlywood;
+}
